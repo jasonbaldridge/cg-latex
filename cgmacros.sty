@@ -1,0 +1,202 @@
+%%%%%% fonts and styles for categorial grammar
+%%%%%% Gann Bierner and Jason Baldridge
+
+%\newcommand{\gf}[1]{\ensuremath{\mathbf{#1}}}   % gloss font
+%\newcommand{\gf}[1]{\ensuremath{\mathit{#1}}}   % gloss font
+\newcommand{\gf}[1]{\textsf{\textsl{#1}}}   % gloss font
+\newcommand{\tf}[1]{\textit{#1}}   % gloss font
+%\newcommand{\tf}[1]{\textit{#1}} % translation font
+\newcommand{\wat}[2]{\tf{#1} `#2'} % word and translation
+\newcommand{\cfont}{\mathsf}
+\newcommand{\cf}[1]{\ensuremath{\cfont{#1}}}   % category font
+\newcommand{\subcat}[1]{\ensuremath{_{\cfont{#1}}}}
+\newcommand{\feat}[1]{\ensuremath{\mathit{#1}}}
+\newcommand{\fu}[1]{\ensuremath{^{\mathit{#1}}}}
+%\newcommand{\fb}[1]{\ensuremath{_{{\scriptscriptstyle \feat{#1}}}}}
+\newcommand{\fb}[1]{_{{\scriptscriptstyle \feat{#1}}}}
+\newcommand{\fs}[1]{[\textit{#1}]}
+\newcommand{\semf}[1]{\ensuremath{\mathit{#1}}}   % semantics font
+\newcommand{\con}[1]{\textbf{#1}}   % constant font
+\newcommand{\C}[1]{\textbf{#1}}   % constant font
+%\newcommand{\lexcat}[2]{\gf{#1}~\ensuremath{\vdash}~\cf{#2}}   % lexical entry
+\newcommand{\lexcat}[2]{\gf{#1}~:=~\cf{#2}}   % lexical entry
+\newcommand{\lexcattight}[2]{\gf{#1}{:=}\cf{#2}}   % lexical entry
+\newcommand{\struccat}[2]{\gf{#1}\ensuremath{\vdash}\cf{#2}}   % structure + cat
+\newcommand{\lexcatbig}[2]{\gf{#1}~\ensuremath{\vdash}\\\cf{#2}}   % lexical entry
+\newcommand{\cs}[2]{\cf{#1} : \semf{#2}}   % category and semantics
+\newcommand{\cl}[2]{\cf{#1}{:}\semf{#2}}   % category and semantics
+\newcommand{\lcs}[3]{\lexcat{#1}{#2} : \semf{#3}} % lexical entry w/ semantics
+\newcommand{\hyp}[1]{\ensuremath{\mathit{#1}}}
+\newcommand{\modal}[1]{\textsc{#1}}
+\newcommand{\ps}[1]{\textsl{#1}} % phrase structure elements
+
+
+\newcommand{\alA}[1]{(\semf{#1})}
+\newcommand{\alB}[2]{(\semf{#1,#2})}
+\newcommand{\alC}[3]{(\semf{#1,#2,#3})}
+%\newcommand{\pB}[2]{~#2~#1}
+\newcommand{\pA}[2]{\C{#1}\alA{#2}}
+\newcommand{\pB}[3]{\C{#1}\alB{#2}{#3}}
+\newcommand{\pC}[4]{\C{#1}\alC{#2}{#3}{#4}}
+
+
+\newcommand{\lm}[1]{{\ensuremath \lambda{#1}}} % shortened call to \lambda
+\newcommand{\lp}{\lambda{p}}
+\newcommand{\lx}{\lambda{x}}
+\newcommand{\ly}{\lambda{y}}
+\newcommand{\lz}{\lambda{z}}
+
+% modalities and slashes
+\newcommand{\allm}{\ensuremath{\cdot}}
+%\newcommand{\allm}{\ensuremath{\circ}}
+\newcommand{\appm}{\ensuremath{{\scriptstyle \star}}}
+\newcommand{\bass}{\ensuremath{\diamond}}
+\newcommand{\rass}{\ensuremath{{\scriptstyle \rhd}}}
+\newcommand{\lass}{\ensuremath{{\scriptstyle \lhd}}}
+\newcommand{\perm}{\ensuremath{\times}}
+\newcommand{\cassSmall}{\ensuremath{{\scriptstyle \times}}}
+\newcommand{\cass}{\cassSmall}
+%\newcommand{\sass}{\mbox{$\Join$}}
+\newcommand{\sassSmall}{\mbox{\scriptsize $\Join$}}
+\newcommand{\sass}{\sassSmall}
+\newcommand{\x}{\cassSmall}
+\newcommand{\lxl}{\sassSmall}
+\newcommand{\plusSmall}{\ensuremath{\scriptstyle +}}
+
+\newcommand{\rsl}[1]{\ensuremath{/\hspace{-0.75mm}_\mathit{#1}\hspace{-0.2mm}}}
+%\newcommand{\rsl}[1]{\ensuremath{/\hspace{-1.5mm}_\mathit{#1}}}
+\newcommand{\lsl}[1]{\ensuremath{\bs\hspace{-0.5mm}_\mathit{#1}\hspace{-0.2mm}}}
+%\newcommand{\lsl}[1]{\ensuremath{\bs\hspace{-0.95mm}^{#1}}}
+\newcommand{\usl}[1]{\ensuremath{|\hspace{-.5mm}_{#1}}}
+\newcommand{\product}[1]{\ensuremath{\bullet\hspace{-0.5mm}_\mathit{#1}\hspace{-0.2mm}}}
+
+
+\newcommand{\prodAM}{\product{\allm}}
+\newcommand{\prodX}{\product{\cass}}
+\newcommand{\prodH}{\product{\hass}}
+\newcommand{\prodNA}{\product{\appm}}
+
+\newcommand{\rAM}{\rsl{\allm}} % right slash, all modes
+\newcommand{\lAM}{\lsl{\allm}} % left slash, all modes
+\newcommand{\rNA}{\rsl{\appm}} % right slash, non-associative
+\newcommand{\lNA}{\lsl{\appm}} % left slash, non-associative
+\newcommand{\rPL}{\rsl{\plusSmall}}
+\newcommand{\lPL}{\lsl{\plusSmall}}
+%\newcommand{\rBA}{\rsl{}} % right slash, right associative
+%\newcommand{\lBA}{\lsl{}} % left slash, left associative
+%\newcommand{\rRA}{\rsl{}} % right slash, right associative
+%\newcommand{\rLA}{\rsl{}} % right slash, left associative
+%\newcommand{\lLA}{\lsl{}} % left slash, left associative
+%\newcommand{\lRA}{\lsl{}} % left slash, right associative
+\newcommand{\rBA}{\rsl{\bass}} % right slash, right associative
+\newcommand{\lBA}{\lsl{\bass}} % left slash, left associative
+\newcommand{\rRA}{\rsl{\rass}} % right slash, right associative
+\newcommand{\rLA}{\rsl{\lass}} % right slash, left associative
+\newcommand{\lLA}{\lsl{\lass}} % left slash, left associative
+\newcommand{\lRA}{\lsl{\rass}} % left slash, right associative
+\newcommand{\lX}{\lsl{\cassSmall}}
+\newcommand{\rX}{\rsl{\cassSmall}}
+\newcommand{\lFA}{\lsl{\sassSmall}} % left slash, fully associative
+\newcommand{\rFA}{\rsl{\sassSmall}} % right slash, fully associative
+\newcommand{\uFA}{\usl{\sassSmall}} % right slash, fully associative
+
+
+%\newcommand{\rbass}{\ensuremath{\scriptstyle {\diamond}\!{\succ}}}
+%\newcommand{\lbass}{\ensuremath{\stackrel{\hookleftarrow}{\diamond}}}
+%\newcommand{\leftsymbol}{\blacktriangleleft}
+%\newcommand{\rightsymbol}{\blacktriangleright}
+\newcommand{\rightsymbol}{\triangleright}
+\newcommand{\leftsymbol}{\triangleleft}
+
+\newcommand{\hmode}[2]{\ensuremath{{\scriptstyle{#1}\!{#2}}}}
+\newcommand{\rmode}[1]{\hmode{#1}{\rightsymbol}}
+\newcommand{\lmode}[1]{\hmode{\leftsymbol}{#1}}
+%\newcommand{\rmode}[1]{\hmode{#1}{\rightarrow}}
+%\newcommand{\lmode}[1]{\hmode{\leftarrow}{#1}}
+\newcommand{\rappm}{\rmode{\appm}}
+\newcommand{\lappm}{\lmode{\appm}}
+\newcommand{\hass}{\ensuremath{{\scriptstyle \diamond}}}
+\newcommand{\rhass}{\hass}
+\newcommand{\lhass}{\hass}
+%\newcommand{\rhass}{\rmode{\diamond}}
+%\newcommand{\lhass}{\lmode{\diamond}}
+\newcommand{\rcass}{\rmode{\times}}
+\newcommand{\lcass}{\lmode{\times}}
+%\newcommand{\rall}{\rmode{\allm}}
+%\newcommand{\lall}{\lmode{\allm}}
+\newcommand{\rall}{\ensuremath{{\scriptstyle \rightsymbol}}}
+\newcommand{\lall}{\ensuremath{{\scriptstyle \leftsymbol}}}
+\newcommand{\rsass}{\rmode{\otimes}}
+\newcommand{\lsass}{\lmode{\otimes}}
+%\newcommand{\lsass}{\ensuremath{{\scriptstyle \prec}\!{\Join}}}
+
+\newcommand{\rrA}{\rsl{\rall}}
+\newcommand{\rrH}{\rsl{\rhass}}
+\newcommand{\rH}{\rsl{\hass}}
+\newcommand{\rrX}{\rsl{\rcass}}
+\newcommand{\rlA}{\rsl{\lall}}
+\newcommand{\rlH}{\rsl{\lhass}}
+\newcommand{\rlX}{\rsl{\lcass}}
+
+\newcommand{\llA}{\lsl{\lall}}
+\newcommand{\llH}{\lsl{\lhass}}
+\newcommand{\lH}{\lsl{\hass}}
+\newcommand{\llX}{\lsl{\lcass}}
+\newcommand{\lrA}{\lsl{\rall}}
+\newcommand{\lrH}{\lsl{\rhass}}
+\newcommand{\lrX}{\lsl{\rcass}}
+
+%\newcommand{\permute}{\ensuremath{{\scriptstyle \clubsuit}}}
+\newcommand{\permute}{\ensuremath{{\scriptstyle \otimes}}}
+%\newcommand{\permute}{\otimes}
+\newcommand{\lP}{\lsl{\permute}} %right permuting
+\newcommand{\rP}{\rsl{\permute}} %left permuting
+
+% basic categories with optional feature
+\newcommand{\s}[1][]{\cf{s\fb{#1}}}
+\newcommand{\np}[1][]{\cf{n\fb{#1}}}
+\newcommand{\n}[1][]{\cf{n\fb{#1}}}
+\newcommand{\N}[2][]{\stackrel{#2}{\n{#1}}}
+\newcommand{\SM}[2]{\stackrel{#2}{\s{#1}}}
+\newcommand{\vp}[1]{\cf{vp\fb{#1}}}
+\newcommand{\Verb}[1]{\cf{v\fb{#1}}}
+
+\setlength{\fboxsep}{0.25mm}
+\newcommand{\var}[1]{\fbox{#1}}
+
+\newcommand{\gcomb}{\ensuremath{\circ}}
+\newcommand{\sign}[1]{\ensuremath{\Sigma_{#1}}}
+\newcommand{\ST}[3][\gcomb]{\ensuremath{(\gf{#2} ~#1~ \gf{#3})}}
+\newcommand{\STS}[3][\gcomb]{\ensuremath{(\sign{#2} #1 \sign{#3})}}
+%\newcommand{\ST}[3][\gcomb]{\ensuremath{\left(\gf{#2} ~#1~ \gf{#3}\right)}}
+%\newcommand{\STS}[3][\gcomb]{\ensuremath{\left(\sign{#2} #1 \sign{#3}\right)}}
+\newcommand{\RBST}[5]{\ST[#2]{#1}{\ST[#4]{#3}{#5}}} % right-branching structure
+\newcommand{\LBST}[5]{\ST[#4]{\ST[#2]{#1}{#3}}{#5}}  % left-branching structure
+
+%\newcommand{\sign}[1]{\ensuremath{\stackrel{#1}{\Sigma}}}
+
+\newcommand{\G}[1][]{\ensuremath{\mathcal{G}_{#1}}}
+
+
+% CTL stuff
+\newcommand{\BOX}[1][]{
+  \ensuremath{\Box_\mathit{#1}}
+}
+
+\newcommand{\DIA}[1][]{
+  \ensuremath{\diamondsuit\hspace{-.5mm}_\mathit{#1}}
+%  \ensuremath{\Diamond_{\mathit{\scriptscriptstyle #1}}}
+}
+
+%\newcommand{\UNA}[2][]{\ensuremath{<#2>^#1}}
+\newcommand{\UNA}[2][]{\ensuremath{\left<#2\right>^{#1}}}
+
+\newcommand{\ri}{\ensuremath{\rsl{\mathit{i}}}}
+\newcommand{\li}{\ensuremath{\bs_\mathit{i}}}
+\newcommand{\rj}{\ensuremath{\rsl{\mathit{j}}}}
+\newcommand{\lj}{\ensuremath{\bs_\mathit{j}}}
+\newcommand{\cmp}[1]{\ensuremath{\circ\hspace{-1mm}_\mathit{#1}}}
+
+\newcommand{\GAM}{\ensuremath{\Gamma}}
+\newcommand{\DEL}[1][]{\ensuremath{\Delta_{#1}}}
+
